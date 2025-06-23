@@ -1,0 +1,153 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxuj0vc0d58nq"]
+
+[ext_resource type="Script" path="res://sound.gd" id="1_pc6ue"]
+[ext_resource type="AudioStream" uid="uid://cwug1gygn2ddj" path="res://gaming-sound-143716.mp3" id="2_xwi5h"]
+
+[node name="Control" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1432.0
+offset_bottom = 800.0
+script = ExtResource("1_pc6ue")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 984.0
+color = Color(0, 0.0313726, 0.133333, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = 8.0
+offset_right = 1928.0
+offset_bottom = 216.0
+theme_override_font_sizes/font_size = 150
+text = "Sound Effect"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 304.0
+offset_right = 424.0
+offset_bottom = 440.0
+theme_override_font_sizes/font_size = 80
+text = "Music -"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="."]
+modulate = Color(0.988235, 0.972549, 0.984314, 1)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 472.0
+offset_top = -80.0
+offset_right = 416.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/grabber_offset = 0
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="SFXSlider" type="HSlider" parent="."]
+modulate = Color(0.988235, 0.972549, 0.984314, 1)
+layout_mode = 0
+offset_left = 472.0
+offset_top = 440.0
+offset_right = 1864.0
+offset_bottom = 584.0
+theme_override_constants/grabber_offset = 0
+max_value = 5.0
+step = 0.05
+value = 5.0
+
+[node name="SFXLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = -88.0
+offset_top = 416.0
+offset_right = 496.0
+offset_bottom = 592.0
+theme_override_font_sizes/font_size = 80
+text = "SFX -"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 736.0
+offset_top = 760.0
+offset_right = 1288.0
+offset_bottom = 928.0
+theme_override_font_sizes/font_size = 80
+text = "Back"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_xwi5h")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_top = 568.0
+offset_right = 456.0
+offset_bottom = 704.0
+theme_override_font_sizes/font_size = 80
+text = "Master-"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 488.0
+offset_top = 608.0
+offset_right = 1864.0
+offset_bottom = 672.0
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="Music explanation" type="Label" parent="."]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 320.0
+offset_right = 1696.0
+offset_bottom = 376.0
+theme_override_font_sizes/font_size = 30
+text = "change volume of the background muic of UI"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Master explanation" type="Label" parent="."]
+layout_mode = 0
+offset_left = 608.0
+offset_top = 584.0
+offset_right = 1744.0
+offset_bottom = 640.0
+theme_override_font_sizes/font_size = 30
+text = "change volume of the background muic of UI and Sound effect when player moves "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFX explanation" type="Label" parent="."]
+layout_mode = 0
+offset_left = 616.0
+offset_top = 456.0
+offset_right = 1752.0
+offset_bottom = 512.0
+theme_override_font_sizes/font_size = 30
+text = "change volume  of the sound effect when player moves"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="value_changed" from="MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]

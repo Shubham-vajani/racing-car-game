@@ -1,0 +1,100 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwf0clfoygkgv"]
+
+[ext_resource type="Texture2D" uid="uid://bibtyix5u8s06" path="res://white-mercedes-benz-top-car-png-3.png" id="1_2hc5q"]
+[ext_resource type="Script" path="res://help2.gd" id="1_lcy8e"]
+[ext_resource type="Texture2D" uid="uid://bafjop7l2vbl2" path="res://top-car-view-png-34861.png" id="2_mkcad"]
+[ext_resource type="AudioStream" uid="uid://cwug1gygn2ddj" path="res://gaming-sound-143716.mp3" id="3_66kct"]
+
+[node name="Control" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lcy8e")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = -64.0
+offset_right = 1944.0
+offset_bottom = 968.0
+color = Color(0, 0.0313726, 0.133333, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_top = -48.0
+offset_right = 1936.0
+offset_bottom = 126.0
+theme_override_font_sizes/font_size = 125
+text = "Help"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_top = 112.0
+offset_right = 1936.0
+offset_bottom = 286.0
+theme_override_font_sizes/font_size = 90
+text = "2 Player"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 304.0
+offset_right = 1040.0
+offset_bottom = 736.0
+theme_override_font_sizes/font_size = 50
+text = "      Player 1 :-
+Use Up Arrow to move forward
+Use Down Arrow to move 
+             downwards
+Use Left Arrow to move left
+Use Right Arrow to move right
+Press Escape Key to pause game"
+
+[node name="White-mercedes-benz-top-car-png-4" type="Sprite2D" parent="Label3"]
+position = Vector2(504, 32)
+rotation = 3.14069
+scale = Vector2(0.246541, 0.203714)
+texture = ExtResource("1_2hc5q")
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1072.0
+offset_top = 304.0
+offset_right = 2064.0
+offset_bottom = 736.0
+theme_override_font_sizes/font_size = 50
+text = "      Player 2 :-
+Use W Key to move forward
+Use S Key to move downwards
+Use A Key to move left
+Use D Key to move right
+Press Escape Key to pause game"
+
+[node name="Top-car-view-png-34861" type="Sprite2D" parent="Label4"]
+position = Vector2(429, 47)
+scale = Vector2(0.185874, 0.141328)
+texture = ExtResource("2_mkcad")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 672.0
+offset_top = 792.0
+offset_right = 1336.0
+offset_bottom = 912.0
+theme_override_font_sizes/font_size = 100
+text = "Back"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_66kct")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

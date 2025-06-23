@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpvhlyseckocn"]
+
+[ext_resource type="Script" path="res://shubham1.gd" id="1_d7v0x"]
+[ext_resource type="Texture2D" uid="uid://bafjop7l2vbl2" path="res://top-car-view-png-34861.png" id="1_mv368"]
+[ext_resource type="AudioStream" uid="uid://nrm6xud0ofxc" path="res://engine-47745.mp3" id="3_0fqdm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cufpj"]
+size = Vector2(280, 416)
+
+[node name="car" type="CharacterBody2D"]
+script = ExtResource("1_d7v0x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Top-car-view-png-34861" type="Sprite2D" parent="."]
+position = Vector2(204.053, -44.6661)
+rotation = -1.65205
+scale = Vector2(0.535466, 0.690255)
+texture = ExtResource("1_mv368")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1296.51, -372.445)
+rotation = -0.0115814
+scale = Vector2(4.82513, 2.98)
+polygon = PackedVector2Array(296, 56, 309.162, 52.7376, 322.939, 69.2969, 319.681, 61.1816, 326.197, 77.4123, 326.044, 89.9799, 327.587, 107.272, 329.053, 136.07, 327.203, 164.801, 328, 176, 320, 184, 312, 184, 288, 184, 282.421, 166.778, 282.632, 141.029, 280, 120, 281.3, 95.3635, 281.563, 74.3123, 288, 64)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+
+[node name="sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0fqdm")
+volume_db = 3.0
+bus = &"SFX"
+
+[node name="Area2D" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(172, -48)
+shape = SubResource("RectangleShape2D_cufpj")

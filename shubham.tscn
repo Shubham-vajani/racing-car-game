@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyha0gsjj0ynw"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_beok8"]
+[ext_resource type="Texture2D" uid="uid://bafjop7l2vbl2" path="res://top-car-view-png-34861.png" id="2_afv85"]
+[ext_resource type="AudioStream" uid="uid://nrm6xud0ofxc" path="res://engine-47745.mp3" id="3_3ixyb"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+rotation = -1.58811
+script = ExtResource("1_beok8")
+
+[node name="Top-car-view-png-34861" type="Sprite2D" parent="."]
+position = Vector2(-266.978, 367.814)
+scale = Vector2(0.440939, 0.606338)
+texture = ExtResource("2_afv85")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-110.078, 350.147, -118.908, 398.001, -135.459, 429.719, -151.595, 437.441, -167.731, 445.163, -183.591, 436.887, -335.706, 442.255, -375.7, 441.562, -399.558, 433.148, -415.417, 424.872, -423.139, 408.736, -430.584, 376.603, -437.752, 328.471, -428.922, 280.617, -412.509, 256.898, -388.236, 241.315, -324.245, 242.423, -244.257, 243.808, -196.264, 244.639, -164.269, 245.193, -140.411, 253.607, -116.969, 286.018, -109.662, 326.15, -109.939, 342.148, -109.939, 342.148)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-222.061, 348.208)
+
+[node name="sound" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(-262.055, 347.516)
+stream = ExtResource("3_3ixyb")
+volume_db = 3.0

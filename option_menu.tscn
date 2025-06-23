@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf3w8cxf6oc7g"]
+
+[ext_resource type="Script" path="res://Node2D.gd" id="1_dhl6t"]
+[ext_resource type="AudioStream" uid="uid://cwug1gygn2ddj" path="res://gaming-sound-143716.mp3" id="2_h0kvm"]
+
+[node name="Node2D" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_dhl6t")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 640.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_right = 2408.0
+offset_bottom = 1096.0
+color = Color(0, 0.0313726, 0.133333, 1)
+
+[node name="Button" type="Button" parent="Control/ColorRect"]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 360.0
+offset_right = 1496.0
+offset_bottom = 488.0
+theme_override_font_sizes/font_size = 80
+text = "Volume"
+
+[node name="Button2" type="Button" parent="Control/ColorRect"]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 800.0
+offset_right = 1488.0
+offset_bottom = 928.0
+theme_override_font_sizes/font_size = 80
+text = "Back"
+
+[node name="Button3" type="Button" parent="Control/ColorRect"]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 592.0
+offset_right = 1488.0
+offset_bottom = 728.0
+theme_override_font_sizes/font_size = 80
+text = "Help
+"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 488.0
+offset_top = 64.0
+offset_right = 1664.0
+offset_bottom = 238.0
+theme_override_font_sizes/font_size = 125
+text = "Option Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_h0kvm")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
+
+[connection signal="pressed" from="Control/ColorRect/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Control/ColorRect/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Control/ColorRect/Button3" to="." method="_on_button_3_pressed"]

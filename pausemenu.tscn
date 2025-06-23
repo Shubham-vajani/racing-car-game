@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://bktksou2jtwhc"]
+
+[ext_resource type="Script" path="res://pausemenu.gd" id="1_0gpf2"]
+
+[node name="pausemenu" type="Control"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0gpf2")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -448.0
+offset_top = -316.0
+offset_right = 984.0
+offset_bottom = 580.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -32.0
+offset_right = 1440.0
+offset_bottom = 904.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 152.0
+offset_right = 2104.0
+offset_bottom = 376.0
+theme_override_font_sizes/font_size = 150
+text = "Pause Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 712.0
+offset_top = 440.0
+offset_right = 1928.0
+offset_bottom = 616.0
+theme_override_font_sizes/font_size = 100
+text = "Resume"
+
+[node name="ExitButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 720.0
+offset_top = 688.0
+offset_right = 1936.0
+offset_bottom = 864.0
+theme_override_font_sizes/font_size = 100
+text = "Exit"
+
+[connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

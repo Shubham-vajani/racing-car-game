@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpakxvwe7lide"]
+
+[ext_resource type="Script" path="res://opponent.gd" id="1_dn12i"]
+[ext_resource type="Texture2D" uid="uid://dmpm3tfq52pfl" path="res://top-car-view-png-34864.png" id="2_3b6gt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbijo"]
+size = Vector2(511.869, 224.174)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+rotation = 1.55892
+script = ExtResource("1_dn12i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Top-car-view-png-34864" type="Sprite2D" parent="."]
+position = Vector2(91.0834, 43.3586)
+scale = Vector2(0.712528, 0.696793)
+texture = ExtResource("2_3b6gt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(110.174, -35.5485)
+scale = Vector2(0.736172, 0.776234)
+polygon = PackedVector2Array(-328, -8, -344, 32, -352, 72, -352, 152, -328, 216, -288, 240, -240, 248, -168, 248, -112, 232, 112, 232, 128, 248, 240, 248, 296, 232, 320, 184, 320, 112, 320, 24, 280, -24, 240, -40, 128, -40, 96, -32, -112, -40, -160, -48, -200, -48, -256, -48, -296, -40)
+
+[node name="Area2D" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(79.5669, 41.8974)
+shape = SubResource("RectangleShape2D_hbijo")

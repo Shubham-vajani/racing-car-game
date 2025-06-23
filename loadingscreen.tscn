@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://ss0iv6im104t"]
+
+[ext_resource type="Script" path="res://Control.gd" id="1_enoyq"]
+[ext_resource type="AudioStream" uid="uid://cwug1gygn2ddj" path="res://gaming-sound-143716.mp3" id="2_b6cul"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 920.0
+offset_bottom = 504.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_enoyq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 2080.0
+offset_bottom = 1152.0
+color = Color(0, 0.0313726, 0.133333, 1)
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 656.0
+offset_right = 1688.0
+offset_bottom = 816.0
+theme_override_font_sizes/font_size = 100
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 2088.0
+offset_bottom = 224.0
+theme_override_font_sizes/font_size = 150
+text = "Racing Car "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 352.0
+offset_right = 1025.0
+offset_bottom = 576.0
+theme_override_font_sizes/font_size = 100
+text = "Game is loading....... "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_b6cul")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"

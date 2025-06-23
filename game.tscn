@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://4ealb2muhfdt"]
+
+[ext_resource type="Script" path="res://Game_manager_1.gd" id="1_mc83p"]
+[ext_resource type="PackedScene" uid="uid://eug8arna3n66" path="res://background.tscn" id="2_rglmi"]
+[ext_resource type="PackedScene" uid="uid://bktksou2jtwhc" path="res://pausemenu.tscn" id="3_gxqn2"]
+
+[node name="GameManager1" type="Node"]
+process_mode = 3
+script = ExtResource("1_mc83p")
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_rglmi")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pausemenu" parent="CanvasLayer" instance=ExtResource("3_gxqn2")]

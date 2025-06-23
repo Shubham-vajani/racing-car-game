@@ -1,0 +1,109 @@
+[gd_scene load_steps=5 format=3 uid="uid://casbe20ac7sv8"]
+
+[ext_resource type="Script" path="res://help.gd" id="1_aqqdd"]
+[ext_resource type="Texture2D" uid="uid://td5af6guu0iu" path="res://stone 1.png" id="3_33f07"]
+[ext_resource type="AudioStream" uid="uid://cwug1gygn2ddj" path="res://gaming-sound-143716.mp3" id="3_773aa"]
+[ext_resource type="Texture2D" uid="uid://oa3ckgg3k51h" path="res://truck 1.png" id="4_84rf1"]
+
+[node name="Help" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_aqqdd")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1504.0
+offset_bottom = 832.0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_right = 1448.0
+offset_bottom = 832.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -56.0
+offset_right = 3256.0
+offset_bottom = 1536.0
+color = Color(0, 0.0313726, 0.133333, 1)
+
+[node name="Button 2" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 864.0
+offset_right = 1408.0
+offset_bottom = 984.0
+theme_override_font_sizes/font_size = 40
+text = "Back"
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 80.0
+offset_right = 1904.0
+offset_bottom = 674.0
+theme_override_font_sizes/font_size = 40
+text = "Use W key to move forward
+Use S key to move backwards
+Use A key to move to left
+Use D key to move to right
+Press Escape Key to pause game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = 72.0
+offset_top = -32.0
+offset_right = 1856.0
+offset_bottom = 142.0
+theme_override_font_sizes/font_size = 80
+text = "Help menu "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 72.0
+offset_top = 72.0
+offset_right = 1856.0
+offset_bottom = 246.0
+theme_override_font_sizes/font_size = 50
+text = "Against AI"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_773aa")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 296.0
+offset_top = 560.0
+offset_right = 1856.0
+offset_bottom = 728.0
+theme_override_font_sizes/font_size = 40
+text = "               Player Hits stone time will increase by 3 (penalty)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 360.0
+offset_top = 720.0
+offset_right = 1920.0
+offset_bottom = 888.0
+theme_override_font_sizes/font_size = 40
+text = "               Player Hits truck time will increase by 5 (penalty)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Stone1" type="Sprite2D" parent="."]
+position = Vector2(472, 632)
+scale = Vector2(0.140636, 0.130137)
+texture = ExtResource("3_33f07")
+
+[node name="Truck1" type="Sprite2D" parent="."]
+position = Vector2(448, 816)
+scale = Vector2(0.116381, 0.108605)
+texture = ExtResource("4_84rf1")
+
+[connection signal="pressed" from="ColorRect/Button 2" to="." method="_on_button_2_pressed"]

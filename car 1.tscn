@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba5i5fi5ejgj0"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_qfhl2"]
+[ext_resource type="Texture2D" uid="uid://bibtyix5u8s06" path="res://white-mercedes-benz-top-car-png-3.png" id="2_r4n2e"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+position = Vector2(-32, -120)
+script = ExtResource("1_qfhl2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="White-mercedes-benz-top-car-png-3" type="Sprite2D" parent="."]
+position = Vector2(602.108, 426.801)
+rotation = 1.56054
+scale = Vector2(0.349697, 0.437318)
+texture = ExtResource("2_r4n2e")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0.000183105, 0)
+scale = Vector2(1, 1)
+polygon = PackedVector2Array(608, 296, 664, 312, 672, 336, 672, 528, 656, 552, 616, 560, 576, 560, 544, 544, 536, 320, 584, 296)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(592, 448)

@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://b34d25yhw2as1"]
+
+[ext_resource type="Texture2D" uid="uid://bafjop7l2vbl2" path="res://top-car-view-png-34861.png" id="1_erg08"]
+[ext_resource type="Script" path="res://car option.gd" id="1_vetxl"]
+[ext_resource type="Texture2D" uid="uid://bibtyix5u8s06" path="res://white-mercedes-benz-top-car-png-3.png" id="2_atvff"]
+[ext_resource type="Texture2D" uid="uid://byg41d31fbtmt" path="res://car 2.png" id="3_edqsu"]
+[ext_resource type="AudioStream" uid="uid://cwug1gygn2ddj" path="res://gaming-sound-143716.mp3" id="5_crnir"]
+[ext_resource type="Texture2D" uid="uid://c4lrwiogksjo" path="res://back-512.png" id="6_qiuvi"]
+
+[node name="Node2D" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_vetxl")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 1816.0
+offset_bottom = 872.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1968.0
+offset_bottom = 992.0
+color = Color(0, 0.0313726, 0.133333, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 1960.0
+offset_bottom = 232.0
+theme_override_font_sizes/font_size = 100
+text = "Select a Car of Your Choice "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 632.0
+offset_top = 272.0
+offset_right = 1224.0
+offset_bottom = 512.0
+
+[node name="Top-car-view-png-34861" type="Sprite2D" parent="."]
+position = Vector2(936, 392)
+scale = Vector2(0.674102, 0.582441)
+texture = ExtResource("1_erg08")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 648.0
+offset_top = 544.0
+offset_right = 1216.0
+offset_bottom = 752.0
+
+[node name="White-mercedes-benz-top-car-png-3" type="Sprite2D" parent="."]
+position = Vector2(944, 656)
+rotation = 3.14015
+scale = Vector2(0.692776, 0.646119)
+texture = ExtResource("2_atvff")
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 656.0
+offset_top = 800.0
+offset_right = 1216.0
+offset_bottom = 960.0
+
+[node name="Car2" type="Sprite2D" parent="."]
+position = Vector2(932.003, 888.502)
+rotation = 3.14135
+scale = Vector2(0.41769, 0.361248)
+texture = ExtResource("3_edqsu")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_crnir")
+volume_db = -20.0
+autoplay = true
+bus = &"Music"
+
+[node name="Button4" type="Button" parent="."]
+offset_right = 232.0
+offset_bottom = 152.0
+
+[node name="Back-512" type="Sprite2D" parent="."]
+position = Vector2(120, 80)
+scale = Vector2(0.4375, 0.40625)
+texture = ExtResource("6_qiuvi")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Button4" to="." method="_on_button_4_pressed"]

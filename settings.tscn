@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://phwtdui1m8y2"]
+
+[ext_resource type="Script" path="res://settings.gd" id="1_64jan"]
+
+[node name="Node2D" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_64jan")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 1832.0
+offset_bottom = 1112.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1976.0
+offset_bottom = 1024.0
+color = Color(0, 0.0313726, 0.133333, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 2008.0
+offset_bottom = 224.0
+theme_override_font_sizes/font_size = 150
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SoundButton" type="Button" parent="."]
+offset_left = 344.0
+offset_top = 312.0
+offset_right = 1728.0
+offset_bottom = 504.0
+theme_override_font_sizes/font_size = 100
+text = "Sound"
+
+[node name="HelpButton2" type="Button" parent="."]
+offset_left = 344.0
+offset_top = 560.0
+offset_right = 1728.0
+offset_bottom = 752.0
+theme_override_font_sizes/font_size = 100
+text = "Help"
+
+[node name="BackButton3" type="Button" parent="."]
+offset_left = 352.0
+offset_top = 808.0
+offset_right = 1736.0
+offset_bottom = 1000.0
+theme_override_font_sizes/font_size = 100
+text = "Back"
+
+[connection signal="pressed" from="SoundButton" to="." method="_on_sound_button_pressed"]
+[connection signal="pressed" from="HelpButton2" to="." method="_on_help_button_2_pressed"]
+[connection signal="pressed" from="BackButton3" to="." method="_on_back_button_3_pressed"]
